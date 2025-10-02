@@ -25,6 +25,46 @@ Entender a diferença entre **CapEx** (Capital Expenditure) e **OpEx** (Operatio
 
 ---
 
+## 🧩 Tipos de Serviço de Nuvem (IaaS, PaaS, SaaS)
+
+Os serviços de nuvem são categorizados em três modelos principais, definindo a divisão de responsabilidade entre o cliente e o provedor.
+
+### Definições
+
+* **IaaS (Infraestrutura como Serviço):**
+    * Cria uma infraestrutura de TI de pagamento conforme o uso alugando servidores, máquinas virtuais, armazenamento, redes e sistemas operacionais de um provedor de nuvem.
+* **PaaS (Plataforma como Serviço):**
+    * Fornece um ambiente para a criação, o teste e a implantação de aplicativos de software, sem que o cliente precise focar no gerenciamento da infraestrutura subjacente.
+* **SaaS (Software como Serviço):**
+    * Os usuários se conectam e usam aplicativos baseados em nuvem pela Internet, como Microsoft Office 365, e-mail e calendários.
+
+### Comparação do Serviço de Nuvem
+
+| Serviço | Flexibilidade | Foco Principal | Gerenciamento de Infraestrutura | Modelo de Preço |
+| :--- | :--- | :--- | :--- | :--- |
+| **IaaS** | **Mais flexível** | Configuração e gerenciamento de hardware (VMs) para seu aplicativo. | Realizado principalmente pelo Cliente (SO, Runtime, Dados). | Pagamento conforme o uso. |
+| **PaaS** | Moderada | **Desenvolvimento de aplicativos** e código. | Realizado pelo Provedor (SO, Rede, Servidores). | Pagamento conforme o uso. |
+| **SaaS** | Menos flexível | Uso do **software** diretamente (e-mail, CRM). | Realizado pelo Provedor (Tudo, exceto os dados do usuário). | Modelo de assinatura. |
+
+---
+
+## 🤝 Modelo de Responsabilidade Compartilhada
+
+O **Modelo de Responsabilidade Compartilhada** define quem é responsável por cada parte do ambiente de nuvem, dependendo do tipo de serviço (IaaS, PaaS, SaaS) utilizado.
+
+| Componente | Nuvem (IaaS) | Nuvem (PaaS) | Nuvem (SaaS) | On-Premises |
+| :--- | :---: | :---: | :---: | :---: |
+| **Aplicações** | Cliente | Cliente | Provedor | Cliente |
+| **Dados & Contas** | Compartilhada | Compartilhada | Compartilhada | Cliente |
+| **Sistema Operacional** | Cliente | Provedor | Provedor | Cliente |
+| **Controles de Rede** | Cliente | Provedor | Provedor | Cliente |
+| **Rede Física** | Provedor | Provedor | Provedor | Cliente |
+| **Infraestrutura Física** | Provedor | Provedor | Provedor | Cliente |
+
+> **Nota:** A segurança da nuvem é sempre de responsabilidade do provedor (Microsoft), enquanto a segurança *na* nuvem (dados, identidade, dispositivos) é uma responsabilidade que é **compartilhada** ou totalmente do cliente.
+
+---
+
 ## 🚀 Benefícios Essenciais da Nuvem Azure
 
 A computação em nuvem, e especificamente o Azure, oferece uma série de benefícios que impactam diretamente a operação e o custo das empresas.
@@ -42,63 +82,34 @@ A computação em nuvem, e especificamente o Azure, oferece uma série de benef�
 
 ### 📈 Detalhamento dos Benefícios
 
-#### 🥇 Alta Disponibilidade
-Concentra-se em garantir a **disponibilidade máxima** dos serviços, independentemente de interrupções ou eventos. É medida e garantida pelo **Nível de SLA (Service Level Agreement)** dos serviços.
-
-#### ⚖️ Escalabilidade
-Refere-se à capacidade de **ajustar recursos** para atender à demanda.
-* Permite adicionar mais recursos para lidar com o **aumento da demanda**.
-* Por ser um modelo baseado em consumo, você **paga apenas pelo que usa**. Se a demanda cair, você pode reduzir os recursos e os custos.
-* **Escalada Vertical (Scale Up):** Adicionar mais capacidade de processamento (CPU ou RAM) a uma máquina virtual existente.
-
-#### 🔄 Elasticidade
-Permite que os recursos implantados sejam **expandidos ou contraídos (automaticamente ou manualmente)** em resposta a um salto repentino e acentuado na demanda, como ocorre no período da **Black Friday**.
-
-#### 🛡️ Confiabilidade
-Devido ao **design descentralizado**, a nuvem oferece uma infraestrutura naturalmente **confiável e resiliente**.
-* O design descentralizado permite implantar recursos em **várias regiões globais**.
-* Mesmo que um evento catastrófico ocorra em uma região, as outras regiões permanecem em funcionamento.
-
-#### 🔮 Previsibilidade
-Permite que você avance com confiança, tanto no **desempenho** quanto no **custo**.
-* Ambas as previsões são influenciadas pelas diretrizes do **Microsoft Azure Well-Architected Framework**.
-
-#### 🔒 Segurança
-A nuvem oferece ferramentas de segurança robustas, mas a **implementação e gestão de muitas delas é responsabilidade do cliente**.
-* **IaaS (Infraestrutura como Serviço):** Oferece controle máximo, permitindo que você gerencie sistemas operacionais e software, incluindo *patching* e manutenção.
-* **PaaS/SaaS (Plataforma/Software como Serviço):** O *patching* e a manutenção são tratados **automaticamente** pelo provedor, sendo mais prático.
-
-#### 🏛️ Governança
-A **auditoria baseada em nuvem** ajuda a sinalizar recursos fora de conformidade com os padrões corporativos e fornece estratégias de mitigação.
-* A aplicação automática de patches e atualizações contribui para a **governança** e **segurança**.
-* Estabelecer a governança cedo ajuda a manter a presença na nuvem atualizada e protegida.
-
-#### 🛠️ Gerenciabilidade
-Oferece opções duplas de gerenciamento:
-
-1.  **Gerenciamento *da* Nuvem (Cloud Management):** Gerenciar seus recursos de nuvem, como:
-    * Escalar automaticamente a implantação de recursos.
-    * Implantar recursos usando modelos pré-configurados (removendo a necessidade de configuração manual).
-2.  **Gerenciamento *na* Nuvem (In-Cloud Management):** A maneira de gerenciar o ambiente de nuvem e seus recursos, como:
-    * Portal da Web
-    * Interface de Linha de Comando (CLI)
-    * APIs
-    * PowerShell
+* **🥇 Alta Disponibilidade:** Concentra-se em garantir a **disponibilidade máxima** dos serviços, garantida pelo **Nível de SLA (Service Level Agreement)**.
+* **⚖️ Escalabilidade:** Capacidade de **ajustar recursos** para atender à demanda. Você paga apenas pelo que usa e pode escalar **Verticalmente** (adicionar mais CPU/RAM) ou **Horizontalmente** (adicionar mais instâncias).
+* **🔄 Elasticidade:** Permite que os recursos sejam **expandidos ou contraídos automaticamente** em resposta a um salto repentino na demanda (Ex: Black Friday).
+* **🛡️ Confiabilidade:** **Design descentralizado** com recursos implantados em **várias regiões globais**, garantindo resiliência contra eventos catastróficos.
+* **🔮 Previsibilidade:** Confiança no **desempenho** e no **custo**, baseada nas diretrizes do **Microsoft Azure Well-Architected Framework**.
+* **🔒 Segurança:** Oferece ferramentas de segurança. Em **IaaS**, o controle máximo é do cliente (incluindo *patching*). Em **PaaS/SaaS**, o *patching* é automático do provedor.
+* **🏛️ Governança:** **Auditoria baseada em nuvem** para sinalizar recursos fora de conformidade e aplicação automática de patches para manter a segurança.
+* **🛠️ Gerenciabilidade:** Oferece **Gerenciamento *da* Nuvem** (escalar e implantar recursos) e **Gerenciamento *na* Nuvem** (gerenciar via Portal, CLI, APIs, PowerShell).
 
 ---
 
-## 💻 Criação de Máquinas Virtuais (VMs) no Azure
+## 💻 Configuração de Recursos no Azure
 
-A criação de uma Máquina Virtual no Azure é um dos passos iniciais mais comuns na computação em nuvem, sendo um recurso de **IaaS (Infraestrutura como Serviço)**.
+### Criação de Máquinas Virtuais (VMs)
 
-### 🗺️ Caminho Simplificado no Portal
+A criação de uma Máquina Virtual (VM) é um recurso de **IaaS (Infraestrutura como Serviço)**.
 
-O caminho mais direto para iniciar a criação de uma VM (pela interface web) é o seguinte:
+**🗺️ Caminho Simplificado no Portal:**
 
 `Portal Azure` &rarr; `Todos os serviços` &rarr; `Computação` &rarr; `Máquinas Virtuais` &rarr; `Criar` &rarr; `Máquina virtual do Azure`
 
-> **Referência:** Para um tutorial detalhado sobre o processo de criação de uma VM, consulte o link oficial da Microsoft Learn:
-> [Criar uma máquina virtual Windows no portal do Azure](https://learn.microsoft.com/pt-br/azure/virtual-machines/windows/quick-create-portal)
+> **Referência:** [Criar uma máquina virtual Windows no portal do Azure](https://learn.microsoft.com/pt-br/azure/virtual-machines/windows/quick-create-portal)
+
+### Configurando uma Instância de Banco de Dados
+
+A configuração de um Banco de Dados Gerenciado (como o Azure SQL Managed Instance) é um exemplo de serviço **PaaS (Plataforma como Serviço)**, pois a infraestrutura subjacente é gerenciada pelo Azure.
+
+> **Referência:** [Criar uma instância gerenciada do Azure SQL](https://learn.microsoft.com/pt-br/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal)
 
 ---
 
