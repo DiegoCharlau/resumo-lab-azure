@@ -87,4 +87,19 @@ Oferece opções duplas de gerenciamento:
 
 ---
 
+## 💻 Criação de Máquinas Virtuais (VMs) no Azure
+
+A criação de uma Máquina Virtual no Azure é um dos passos iniciais mais comuns na computação em nuvem, sendo um recurso de **IaaS (Infraestrutura como Serviço)**.
+
+### 🗺️ Caminho Simplificado no Portal
+
+O caminho mais direto para iniciar a criação de uma VM (pela interface web) é o seguinte:
+
+`Portal Azure` &rarr; `Todos os serviços` &rarr; `Computação` &rarr; `Máquinas Virtuais` &rarr; `Criar` &rarr; `Máquina virtual do Azure`
+
+> **Referência:** Para um tutorial detalhado sobre o processo de criação de uma VM, consulte o link oficial da Microsoft Learn:
+> [Criar uma máquina virtual Windows no portal do Azure](https://learn.microsoft.com/pt-br/azure/virtual-machines/windows/quick-create-portal)
+
+---
+
 Este README será atualizado à medida que novas aulas forem concluídas.
